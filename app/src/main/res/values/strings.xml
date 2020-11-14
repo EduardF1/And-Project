@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Civilization_App</string>
+    <string name="title_civilizations">Civilizations</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="title_share">Share</string>
+    <string name="civilization_list_item_title">Aztecs</string>
+    <string name="civilization_list_item_expansion">Expansion</string>
+    <string name="civilization_list_item_army_type">Army type</string>
+    <string name="action_settings">Settings</string>
+</resources>

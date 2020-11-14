@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_civilizations">
+
+    <fragment
+        android:id="@+id/navigation_civilizations"
+        android:name="com.example.civilization_app.uis.fragments.CivilizationsFragment"
+        android:label="@string/title_civilizations"
+        tools:layout="@layout/fragment_civilizations" />
+
+    <fragment
+        android:id="@+id/navigation_favorites"
+        android:name="com.example.civilization_app.uis.fragments.FavoritesFragment"
+        android:label="@string/title_favorites"
+        tools:layout="@layout/fragment_favorites" />
+
+    <fragment
+        android:id="@+id/navigation_share"
+        android:name="com.example.civilization_app.uis.fragments.ShareFragment"
+        android:label="@string/title_share"
+        tools:layout="@layout/fragment_share" />
+    <fragment android:id="@+id/placeholder" >
+        <action
+            android:id="@+id/action_placeholder_to_navigation_civilizations"
+            app:destination="@id/navigation_civilizations" />
+        <action
+            android:id="@+id/action_placeholder_to_navigation_share"
+            app:destination="@id/navigation_share" />
+        <action
+            android:id="@+id/action_placeholder_to_navigation_favorites"
+            app:destination="@id/navigation_favorites" />
+    </fragment>
+</navigation>
