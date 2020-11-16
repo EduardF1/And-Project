@@ -3,13 +3,18 @@ package com.example.civilization_app.models;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.google.gson.annotations.SerializedName;
+
 @Entity(tableName = "civilization_table")
 public class Civilization {
 
     @PrimaryKey(autoGenerate = true)
     public int id;
+
+    @SerializedName("name")
     public String civilizationName;
     public String expansion;
+    @SerializedName("army_type")
     public String armyType;
 
     public Civilization() {
@@ -21,6 +26,7 @@ public class Civilization {
         this.expansion = expansion;
         this.armyType = armyType;
     }
+
 
     public String getCivilizationName() {
         return civilizationName;
