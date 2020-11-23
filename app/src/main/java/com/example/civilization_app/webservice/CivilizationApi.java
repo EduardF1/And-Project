@@ -11,7 +11,7 @@ import retrofit2.http.Path;
 
 public interface CivilizationApi {
 
-@GET("/api/v1/civilizations")
+    @GET("/api/v1/civilizations")
     Call<CivilizationResponse> getCivilizations();
 
     @GET("/api/v1/civilization/{name}")
