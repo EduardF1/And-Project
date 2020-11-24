@@ -96,25 +96,4 @@ public class CivilizationsFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
     }
-
-
-/*
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-
-        mViewModel.getCiv().observe(getViewLifecycleOwner(), civ -> {
-            //mIdTextView.setText(civ.id);
-            if (civ != null) {
-
-                mNameTextView.setText(civ.civilizationName);
-                mExpansionTextView.setText(civ.expansion);
-                mTypeTextView.setText(civ.armyType);
-            }
-        });
-
-    }
-
-     */
 }

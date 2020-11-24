@@ -21,6 +21,7 @@ public abstract class PersistenceDatabaseCivilization extends RoomDatabase {
     private static volatile PersistenceDatabaseCivilization INSTANCE;
 
     public abstract CivilizationDao dao();
+
     private static final String DATABASE_NAME = "database.db";
 
     private static final int NUMBER_OF_THREADS = 4;
@@ -44,5 +45,4 @@ public abstract class PersistenceDatabaseCivilization extends RoomDatabase {
         return INSTANCE;
     }
 
-    //https://android.jlelse.eu/android-architecture-components-room-relationships-bf473510c14a
 }

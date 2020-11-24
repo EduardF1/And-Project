@@ -9,25 +9,26 @@ import androidx.lifecycle.ViewModel;
 
 import com.example.civilization_app.models.Civilization;
 import com.example.civilization_app.repository.Repository;
-import com.example.civilization_app.webservice.CivilizationFromWeb;
+
 
 import java.util.ArrayList;
 
-public class ShareViewModel extends AndroidViewModel {
+public class SearchViewModel extends AndroidViewModel {
 
 
     Repository repository;
 
-    public ShareViewModel(Application app) {
+    public SearchViewModel(Application app) {
         super(app);
         repository = Repository.getInstance(app);
     }
 
 
 
-    public LiveData<CivilizationFromWeb> getCivilizationFromWeb(){
+    public LiveData<Civilization> getCivilizationFromWeb(){
         return repository.getCivilizationFromWeb();
     }
+
 
     public void updateCivilization(String param){
         repository.updateCivilization(param);
@@ -35,5 +36,9 @@ public class ShareViewModel extends AndroidViewModel {
 
     public LiveData<ArrayList<Civilization>> getAllCivilizationsFromWeb(){
         return repository.getAllCivilizationsFromWeb();
+    }
+
+    public void addToOwned(Civilization civilization) {
+        repository.insertCivilization(civilization);
     }
 }

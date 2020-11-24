@@ -18,8 +18,4 @@ public interface CivilizationApi {
     Call<CivilizationResponse> getCivilizationByName(@Path("name") String name);
 }
 
-/*
-    1 - civ
-        @GET("/api/v1/civilization/{name}")
-    Call<CivilizationResponse> getCivilizationByName(@Path("name") String name);
- */
+

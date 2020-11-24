@@ -2,8 +2,11 @@ package com.example.civilization_app;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -14,6 +17,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -21,7 +26,7 @@ import androidx.navigation.ui.NavigationUI;
 
 public class MainActivity extends AppCompatActivity {
 
-//TODO: display user name by using FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +35,13 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.navigation_view);
 
         checkIfSignedIn();
+        toolbar = findViewById(R.id.toolbar);
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_civilizations, R.id.navigation_favorites, R.id.navigation_share)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        setSupportActionBar(toolbar);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
@@ -53,6 +60,22 @@ public class MainActivity extends AppCompatActivity {
     private void startLoginActivity() {
         startActivity(new Intent(this, LogInActivity.class));
         finish();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.appbar, menu);
+        return true;
+    }
+
+    public void logOut(MenuItem item) {
+        AuthUI.getInstance()
+                .signOut(this)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    public void onComplete(@NonNull Task<Void> task) {
+                        startLoginActivity();
+                    }
+                });
     }
 
 }

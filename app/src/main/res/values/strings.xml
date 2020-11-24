@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Civilizations</string>
     <string name="title_civilizations">Civilizations</string>
-    <string name="title_favorites">Favorites</string>
-    <string name="title_share">Share</string>
+    <string name="title_info">About</string>
+    <string name="title_search">Search</string>
     <string name="civilization_list_item_title">Aztecs</string>
     <string name="civilization_list_item_expansion">Expansion</string>
     <string name="civilization_list_item_army_type">Army type</string>
@@ -12,5 +12,13 @@
     <string name="add_to_collection">ADD TO COLLECTION</string>
     <string name="show_collection">show collection</string>
     <string name="delete_all">Delete All</string>
+    <string name="action_logout">Logout</string>
+    <string name="action_settings">settings</string>
+    <string name="aoe2_civilizations">AOE2 civilizations</string>
+    <string name="civilization_own">Create own civilization</string>
+    <string name="my_own">Created civilizations</string>
+    <string name="aoe2_fan_wiki">AOE2 Fan wiki</string>
+    <string name="wiki_text">This app is made for every AOE2 fan out there, the civilizations of the game are displayed in the search section, furthermore, you have the possibility to create your own civilization</string>
+    <string name="log_in">Log in</string>
 
 </resources>

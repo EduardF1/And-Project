@@ -1,1 +1,3 @@
-<resources></resources>
+<resources>
+    <dimen name="civilizations_list_item_text">20sp</dimen>
+</resources>

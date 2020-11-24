@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".uis.fragments.ShareFragment">
+    android:layout_marginTop="60dp"
+    tools:context=".uis.fragments.SearchFragment">
 
 
     <EditText
@@ -24,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="48dp"
-        android:text="GetFromWeb"
+        android:text="GET FROM WEB"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,8 +34,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
-        android:layout_marginTop="36dp"
-        android:text="TextView"
+        android:layout_marginTop="8dp"
+        android:text=""
+        android:textColor="@color/sky_blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/requestButton" />
 
@@ -44,7 +46,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:text=""
+        android:textColor="@color/sky_blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/civ_name_pl" />
 
@@ -54,18 +57,37 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:layout_marginTop="24dp"
-        android:text="TextView"
+        android:text=""
+        android:textColor="@color/sky_blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/civ_expansion_pl" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
+
+    <TextView
+        android:id="@+id/civilizations_from_web"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/aoe2_civilizations"
+        android:textColor="@color/sky_blue"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/army_type_pl" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/civilizationFromWebRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/army_type_pl"
-        app:layout_constraintVertical_bias="0.110000014" />
+        app:layout_constraintTop_toBottomOf="@+id/civilizations_from_web"
+        app:layout_constraintVertical_bias="1.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

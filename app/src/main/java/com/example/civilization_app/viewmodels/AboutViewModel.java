@@ -4,16 +4,13 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class FavoritesViewModel extends ViewModel {
+public class AboutViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
+    private final MutableLiveData<String> mText;
 
-    public FavoritesViewModel() {
+    public AboutViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is favorites fragment");
     }
 
-    public LiveData<String> getText() {
-        return mText;
-    }
 }

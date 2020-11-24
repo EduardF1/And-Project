@@ -10,7 +10,6 @@ import com.example.civilization_app.local_db.CivilizationDao;
 import com.example.civilization_app.local_db.PersistenceDatabaseCivilization;
 import com.example.civilization_app.models.Civilization;
 import com.example.civilization_app.webservice.CivilizationApi;
-import com.example.civilization_app.webservice.CivilizationFromWeb;
 import com.example.civilization_app.webservice.CivilizationResponse;
 import com.example.civilization_app.webservice.WebServiceGenerator;
 
@@ -25,27 +24,22 @@ import retrofit2.Response;
 
 public class Repository {
 
-    private CivilizationDao civilizationDao;
-    private CivilizationApi civilizationApiDao;
+    private final CivilizationDao civilizationDao;
     private static Repository instance;
-    private LiveData<List<Civilization>> allCivilizations;
-    private MutableLiveData<CivilizationFromWeb>civilization;
-    private MutableLiveData<ArrayList<Civilization>> civilizationsFromWeb;
+    private final LiveData<List<Civilization>> allCivilizations;
+    private final MutableLiveData<Civilization> civilization;
+    private final MutableLiveData<ArrayList<Civilization>> civilizationsFromWeb;
 
-    private Repository(Application application){
-//        CivilizationDatabase database = CivilizationDatabase.getInstance(application);
+    private Repository(Application application) {
         civilizationDao = PersistenceDatabaseCivilization.getInstance(application).dao();
-       allCivilizations = civilizationDao.getAllCivilizations();
-       // civilization = civilizationDao.getOne();
-        //civilizationApiDao = new CivilizationApiDaoImpl();
+        allCivilizations = civilizationDao.getAllCivilizations();
         civilization = new MutableLiveData<>();
         civilizationsFromWeb = new MutableLiveData<>();
 
     }
 
-    public static synchronized Repository getInstance(Application application){
-        if(instance == null)
-        {
+    public static synchronized Repository getInstance(Application application) {
+        if (instance == null) {
             instance = new Repository(application);
         }
         return instance;
@@ -65,6 +59,7 @@ public class Repository {
     }
 
 
+
     public void deleteAllCivilizations() {
         PersistenceDatabaseCivilization.databaseWriteExecutor.execute(() -> {
             civilizationDao.deleteAllCivilizations();
@@ -73,12 +68,28 @@ public class Repository {
 
 
     // WEB
-    public LiveData<CivilizationFromWeb> getCivilizationFromWeb()
-    {
+    public LiveData<Civilization> getCivilizationFromWeb() {
         return civilization;
     }
 
-    public LiveData<ArrayList<Civilization>> getAllCivilizationsFromWeb(){return civilizationsFromWeb;}
+    public LiveData<ArrayList<Civilization>> getAllCivilizationsFromWeb() {
+        CivilizationApi civilizationApi = WebServiceGenerator.getCivilizationApi();
+        Call<CivilizationResponse> call = civilizationApi.getCivilizations();
+        call.enqueue(new Callback<CivilizationResponse>() {
+            @Override
+            public void onResponse(@NotNull Call<CivilizationResponse> call, Response<CivilizationResponse> response) {
+                if (response.code() == 200) {
+                    civilizationsFromWeb.setValue(response.body().getCivilizations());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<CivilizationResponse> call, Throwable t) {
+                Log.i("Retrofit", "Error on request attempt");
+            }
+        });
+        return civilizationsFromWeb;
+    }
 
     public void updateCivilization(String civilizationName) {
         CivilizationApi civilizationApi = WebServiceGenerator.getCivilizationApi();
@@ -98,40 +109,3 @@ public class Repository {
         });
     }
 }
-
-
-    /*
-    public LiveData<List<Civilization>> getAllCivilizations(){
-        return allCivilizations;
-    }
-*/
-    /*
-    public void insert(Civilization civilization){
-        new InsertCivilizationAsync(civilizationDao).execute(civilization);
-    }
-*/
-
-/*
-
-
-    private static class InsertCivilizationAsync extends AsyncTask<Civilization,Void,Void> {
-        private CivilizationDao civilizationDao;
-
-        private InsertCivilizationAsync(CivilizationDao civilizationDao) {
-            this.civilizationDao = civilizationDao;
-        }
-
-        @Override
-        protected Void doInBackground(Civilization... civilizations) {
-            civilizationDao.insert(civilizations[0]);
-            return null;
-        }
-    }
-*/
-/*
-    private LiveData<Civilization> civilization;
-    public LiveData<Civilization> getCiv() {
-
-        return civilization;
-    }
-*/

@@ -13,7 +13,7 @@ import java.util.List;
 public class CivilizationsViewModel extends AndroidViewModel {
 
 
-    private Repository repository;
+    private final Repository repository;
 
     public CivilizationsViewModel(Application app) {
         super(app);
