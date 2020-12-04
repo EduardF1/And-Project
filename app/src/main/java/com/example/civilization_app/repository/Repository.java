@@ -99,6 +99,11 @@ public class Repository {
             public void onResponse(@NotNull Call<CivilizationResponse> call, Response<CivilizationResponse> response) {
                 if (response.code() == 200) {
                     civilization.setValue(response.body().getCivilization());
+                    Civilization civilization_new = new Civilization();
+                    civilization_new.setCivilizationName(response.body().getCivilization().getCivilizationName());
+                    civilization_new.setArmyType(response.body().getCivilization().getArmyType());
+                    civilization_new.setExpansion(response.body().getCivilization().getExpansion());
+                    insertCivilization(civilization_new);
                 }
             }
 

@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="sky_blue">#18FFFF</color>
-    <color name="light_green">#76FF03</color>
+    <color name="light_neon_green">#76FF03</color>
     <color name="medium_blue">#009aff</color>
     <color name="light_orange">#ff593a</color>
     <color name="black">#212121</color>
     <color name="blue_gray">#607D8B</color>
     <color name="light_gray">#BDBDBD</color>
     <color name="dark_pink">#523440</color>
+    <color name="light_green">#64ffda</color>
+    <color name="lighter_green">#9effff</color>
+    <color name="dark_green">#14cba8</color>
+    <color name="light_purple">#ba68c8</color>
+    <color name="lighter_purple">#ee98fb</color>
+    <color name="dark_purple">#883997</color>
+    <color name="red">#ED0606</color>
 </resources>

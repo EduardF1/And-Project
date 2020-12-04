@@ -11,10 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@color/sky_blue"
+        android:background="@color/lighter_green"
         android:padding="5dp"
         android:text="@string/civilization_own"
-        android:textColor="@color/black"
+        android:textColor="@color/dark_purple"
         android:textStyle="italic|bold"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,8 +39,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/sky_blue"
-                android:textColor="@color/black"
+                android:background="@color/dark_purple"
+                android:textColor="@color/sky_blue"
                 android:textStyle="bold"
                 android:padding="5dp"
                 android:text="@string/civilization_name"
@@ -64,10 +64,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/sky_blue"
+                android:background="@color/dark_purple"
                 android:padding="5dp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
+                android:textColor="@color/sky_blue"
                 android:text="@string/expansion"
                 android:textSize="20sp" />
 
@@ -89,8 +89,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/sky_blue"
-                android:textColor="@color/black"
+                android:background="@color/dark_purple"
+                android:textColor="@color/sky_blue"
                 android:textStyle="bold"
                 android:padding="5dp"
                 android:text="@string/civilization_army_type"
@@ -113,25 +113,28 @@
 
             <Button
                 android:id="@+id/addButton"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="@color/light_neon_green"
                 android:text="@string/add_to_collection"
-                android:textSize="12sp" />
+                android:textColor="@color/dark_purple"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/deleteAllButton"
-                style="@style/Widget.AppCompat.Button.Borderless.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="@color/light_orange"
                 android:text="@string/delete_all"
-                android:textColor="#ED0606"
-                android:textStyle="bold"
-                android:textSize="12sp" />
+                android:textColor="@color/dark_pink"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -141,11 +144,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/dark_pink"
+                android:background="@color/lighter_green"
                 android:padding="5dp"
                 android:textStyle="bold"
                 android:textAlignment="center"
-                android:textColor="@color/light_green"
+                android:textColor="@color/dark_purple"
                 android:text="@string/my_own"
                 android:textSize="20sp" />
         </LinearLayout>

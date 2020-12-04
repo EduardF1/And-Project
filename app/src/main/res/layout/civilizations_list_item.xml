@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:padding="1dp"
                 android:layout_weight="9"
-                android:textColor="@color/light_green"
+                android:textColor="@color/light_neon_green"
                 android:textSize="@dimen/civilizations_list_item_text"
                 android:text="@string/civilization_list_item_title" />
 
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="1dp"
-            android:textColor="@color/light_green"
+            android:textColor="@color/light_neon_green"
             android:textSize="@dimen/civilizations_list_item_text"
             android:text="@string/civilization_list_item_expansion" />
 
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="1dp"
-            android:textColor="@color/light_green"
+            android:textColor="@color/light_neon_green"
             android:textSize="@dimen/civilizations_list_item_text"
             android:text="@string/civilization_list_item_army_type" />
     </LinearLayout>

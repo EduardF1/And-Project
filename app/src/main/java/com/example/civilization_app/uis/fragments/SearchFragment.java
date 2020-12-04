@@ -31,8 +31,6 @@ public class SearchFragment extends Fragment {
     CivilizationsFromWebAdapter civilizationsFromWebAdapter;
 
 
-    //TODO create adapter and list item for all civs from web and display in fragment
-
     private static final String TAG = "ShareFragment";
 
     private SearchViewModel searchViewModel;
@@ -46,7 +44,7 @@ public class SearchFragment extends Fragment {
 
         Log.d(TAG, "onCreateView called -- Share fragment");
 
-        civName = v.findViewById(R.id.civ_name_pl);
+       civName = v.findViewById(R.id.civ_name_pl);
         civExp = v.findViewById(R.id.civ_expansion_pl);
         civArmTyp = v.findViewById(R.id.army_type_pl);
 
@@ -61,8 +59,6 @@ public class SearchFragment extends Fragment {
             civName.setText(civilization.getCivilizationName());
             civExp.setText(civilization.getExpansion());
             civArmTyp.setText(civilization.getArmyType());
-
-            searchViewModel.addToOwned(civilization);
         });
 
         civilizationsFromWebList = v.findViewById(R.id.civilizationFromWebRecyclerView);
@@ -81,11 +77,11 @@ public class SearchFragment extends Fragment {
 
     //react to change
     private void onClickUpdate(View view) {
-        searchViewModel.updateCivilization(editTextReq.getText().toString());
-        if(!(editTextReq.getText().toString().equals("")))
-        {
+        String text = editTextReq.getText().toString();
+        searchViewModel.updateCivilization(text);
+        if (!(text.equals(""))) {
             Snackbar snackbar = Snackbar.make(getActivity().findViewById(android.R.id.content),
-                    "Added from web", Snackbar.LENGTH_SHORT);
+                    "Added from web: " + text, Snackbar.LENGTH_SHORT);
             snackbar.show();
         }
     }
