@@ -1,1 +1,12 @@
-
+This folder is meant to hold several code snippets that are representitive for the App project.
+1) - AboutFragment : implementation of the About fragment 
+2) - Api_interface : implementation of the interface necessary to access Retrofit procedures (Web service access and retrieval of responses - converted objects)
+3) - CivilizationsFragment (part 1 + 2) : implementation of the CivilizationsFragment
+4) - CivilizationsViewModel : implementation of the Civilizations view model and showcase of the MVVM dependecies handling through loose couplings of the view and repository
+5) - Data_Model : by single model it is meant that this is the universal data model which is used throughout the entire application (for both local and web data procedures)
+6) - Local_data_storage_DAO : data access object for the local database
+7) - Local_database(Room) : implementation of the local database with consideration to working in the background (Thread handling) and showcase the use of the Room library
+8) -  MainActivity : showcase (the initial intent/desire) of creating a single activity application (later, due to including the authentication feature) not valid anymore
+9) - Repository : implementation of the "single source of truth" concept, regardless of the data source, this is the universal data holder within the application
+10) - Web_response : pojo that is used for conversion through Retrofit to obtain specific objects (web-retrieved attributes) for usage within the app
+11) - WebServiceGenerator : Web Service handler, sole purpose to generate the base connection artefacts (URL) for using the api endpoints.
