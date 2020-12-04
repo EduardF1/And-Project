@@ -30,7 +30,7 @@ public class CivilizationsAdapter extends RecyclerView.Adapter<CivilizationsAdap
 
     public void setCivilizations(List<Civilization> civilizations) {
         this.civilizations = civilizations;
-        notifyDataSetChanged(); //TODO REMOVE LATER, TESTING
+        notifyDataSetChanged();
     }
 
     @Override
